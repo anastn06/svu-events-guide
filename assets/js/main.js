@@ -90,11 +90,14 @@ if (themeToggle) {
     themeToggle.addEventListener('click', function () {
         // إضافة أو إزالة كلاس dark-mode من جسم الصفحة
         document.body.classList.toggle('dark-mode');
-
+        const savedTheme = localstorage.getItem('theme');
+        
         // تغيير شكل أيقونة الزر
         if (document.body.classList.contains('dark-mode')) {
+            localstorage.setItem('theme','dark');
             themeToggle.textContent = '☀️';
         } else {
+            localstorgae.setItem('theme','light');
             themeToggle.textContent = '🌙';
         }
     });
