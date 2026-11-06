@@ -15,7 +15,7 @@ if (contactForm) {
         const email = document.getElementById('emailInput').value;
         const message = document.getElementById('messageInput').value;
 
-        // تفريغ مكان الرسائل القديمة (عشان ما تتراكم فوق بعض)
+        // تفريغ مكان الرسائل القديمة
         alertPlaceholder.innerHTML = '';
 
         // -- التحقق البسيط --
@@ -23,8 +23,8 @@ if (contactForm) {
             // إذا في حقل فاضي: نطبع Alert خطأ من البوتستراب
             alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء تعبئة جميع الحقول المطلوبة!</div>';
         }
-        else if (email.indexOf('@') === -1) {
-            // تحقق بسيط من صيغة الإيميل (لازم يحتوي على @)
+        else if (email.search(/^\w+@\w+\.\w+$/) === -1) {
+            // تحقق من صيغة الإيميل 
             alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء إدخال بريد إلكتروني صحيح يحوي إشارة @!</div>';
         }
         else {
