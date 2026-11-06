@@ -7,36 +7,50 @@ const alertPlaceholder = document.getElementById('alertPlaceholder');
 // نتأكد أولاً أننا في صفحة "اتصل بنا" وأن الفورم موجود
 if (contactForm) {
     contactForm.addEventListener('submit', function (event) {
-        // نمنع الصفحة من إعادة التحميل (Refresh) عند الضغط على إرسال
+        // منع إعادة تحميل الصفحة عند الضغط على إرسال
         event.preventDefault();
 
-        // نجيب القيم اللي أدخلها المستخدم
-        const name = document.getElementById('nameInput').value;
-        const email = document.getElementById('emailInput').value;
-        const message = document.getElementById('messageInput').value;
+        // جلب عناصر الإدخال (DOM Elements)
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const messageInput = document.getElementById('messageInput');
+
+        // جلب النصوص وحذف الفراغات الزائدة من البداية والنهاية
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
 
         // تفريغ مكان الرسائل القديمة
         alertPlaceholder.innerHTML = '';
 
-        // -- التحقق البسيط --
-        if (name === '' || email === '' || message === '') {
-            // إذا في حقل فاضي: نطبع Alert خطأ من البوتستراب
-            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء تعبئة جميع الحقول المطلوبة!</div>';
+        // 1. فحص حقل الاسم
+        if (name === '') {
+            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء إدخال الاسم الكامل!</div>';
+            nameInput.focus();
         }
+        // 2. فحص هل حقل الإيميل فارغ
+        else if (email === '') {
+            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء إدخال البريد الإلكتروني!</div>';
+            emailInput.focus();
+        }
+        // 3. فحص صحة صيغة الإيميل (إذا كان معبأ لكن بصيغة خاطئة)
         else if (email.search(/^\w+@\w+\.\w+$/) === -1) {
-            // تحقق من صيغة الإيميل 
-            alertPlaceholder.innerHTML = '<div class="alert alert-danger">somone@example.ext الرجاء ادخال بريد الكتروني بصيغة صحيحة </div>';
+            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء إدخال بريد إلكتروني بصيغة صحيحة، مثل: <bdi><code>someone@example.com</code></bdi></div>';
+            emailInput.focus();
+            emailInput.select(); // تظليل النص الخاطئ مباشرة لتسهيل تعديله
         }
+        // 4. فحص حقل الرسالة
+        else if (message === '') {
+            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء كتابة نص الرسالة قبل الإرسال!</div>';
+            messageInput.focus();
+        }
+        // 5. في حال كانت كل الحقول معبأة وصحيحة
         else {
-            // إذا كل شيء تمام: نطبع Alert نجاح
             alertPlaceholder.innerHTML = '<div class="alert alert-success">تم إرسال رسالتك بنجاح! شكراً لتواصلك معنا.</div>';
-
-            // تفريغ الحقول بعد الإرسال الناجح
             contactForm.reset();
         }
     });
 }
-
 // ==========================================
 // 2. فلترة الفعاليات (Events Filter)
 // ==========================================
