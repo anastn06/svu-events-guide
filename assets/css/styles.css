@@ -1,11 +1,11 @@
-/* ÊÚÑíİ ÇáÃáæÇä ÇáÃÓÇÓíÉ ááãæŞÚ */
+/* ØªØ¹Ø±ÙŠÙ Ø§Ù„Ø£Ù„ÙˆØ§Ù† Ø§Ù„Ø£Ø³Ø§Ø³ÙŠØ© Ù„Ù„Ù…ÙˆÙ‚Ø¹ */
 :root {
     --primary-color: #0d47a1;
     --secondary-color: #f57c00;
     --bg-light: #f8f9fa;
 }
 
-/* ÊäÓíŞ ÇáÎØ æÇáÎáİíÉ æÊËÈíÊ ÇáÊĞííá İí ÇáÃÓİá */
+/* ØªÙ†Ø³ÙŠÙ‚ Ø§Ù„Ø®Ø· ÙˆØ§Ù„Ø®Ù„ÙÙŠØ© ÙˆØªØ«Ø¨ÙŠØª Ø§Ù„ØªØ°ÙŠÙŠÙ„ ÙÙŠ Ø§Ù„Ø£Ø³ÙÙ„ */
 body {
     font-family: 'Tajawal', sans-serif;
     background-color: var(--bg-light);
@@ -15,19 +15,38 @@ body {
     min-height: 100vh;
 }
 
-/* ÌÚá ÇáãÍÊæì ÇáÃÓÇÓí íãáÃ ÇáãÓÇÍÉ ÇáãÊÇÍÉ */
+/* Ø¬Ø¹Ù„ Ø§Ù„Ù…Ø­ØªÙˆÙ‰ Ø§Ù„Ø£Ø³Ø§Ø³ÙŠ ÙŠÙ…Ù„Ø£ Ø§Ù„Ù…Ø³Ø§Ø­Ø© Ø§Ù„Ù…ØªØ§Ø­Ø© */
 main {
     flex: 1;
 }
 
-/* ÊäÓíŞ ÔÚÇÑ ÇáãæŞÚ İí ÔÑíØ ÇáÊäŞá */
+/* ØªÙ†Ø³ÙŠÙ‚ Ø´Ø¹Ø§Ø± Ø§Ù„Ù…ÙˆÙ‚Ø¹ ÙÙŠ Ø´Ø±ÙŠØ· Ø§Ù„ØªÙ†Ù‚Ù„ */
 .navbar-brand {
     font-weight: 700;
     color: var(--primary-color) !important;
 }
 
-/* ÊØÈíŞ Çááæä ÇáÃÓÇÓí Úáì ÇáÃÒÑÇÑ */
+/* ØªØ·Ø¨ÙŠÙ‚ Ø§Ù„Ù„ÙˆÙ† Ø§Ù„Ø£Ø³Ø§Ø³ÙŠ Ø¹Ù„Ù‰ Ø§Ù„Ø£Ø²Ø±Ø§Ø± */
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
+}
+
+/* ØªÙ†Ø³ÙŠÙ‚Ø§Øª Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ù„ÙŠÙ„ÙŠ */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+}
+
+/* ØªØ¹Ø¯ÙŠÙ„ Ù„ÙˆÙ† Ø§Ù„ÙƒØ±ÙˆØª ÙÙŠ Ø§Ù„ÙˆØ¶Ø¹ Ø§Ù„Ù„ÙŠÙ„ÙŠ */
+body.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border-color: #333 !important;
+}
+
+/* ØªØ¹Ø¯ÙŠÙ„ Ø®Ù„ÙÙŠØ© Ø§Ù„Ø£Ù‚Ø³Ø§Ù… Ø§Ù„Ø±Ù…Ø§Ø¯ÙŠØ© */
+body.dark-mode .bg-light {
+    background-color: #181818 !important;
+    color: #ffffff !important;
 }
