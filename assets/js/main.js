@@ -25,7 +25,7 @@ if (contactForm) {
         }
         else if (email.search(/^\w+@\w+\.\w+$/) === -1) {
             // تحقق من صيغة الإيميل 
-            alertPlaceholder.innerHTML = '<div class="alert alert-danger">الرجاء إدخال بريد إلكتروني صحيح يحوي إشارة @!</div>';
+            alertPlaceholder.innerHTML = '<div class="alert alert-danger">somone@example.ext الرجاء ادخال بريد الكتروني بصيغة صحيحة </div>';
         }
         else {
             // إذا كل شيء تمام: نطبع Alert نجاح
