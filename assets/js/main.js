@@ -64,10 +64,10 @@ if (filterBtn) {
             const titleText = currentItem.querySelector('.card-title').textContent;
 
             // الشروط: 
-            // 1. هل التصنيف المختار فاضي (يعني "الكل") أو يطابق شارة الكرت؟
+            // 1. هل التصنيف المختار فارغ (يعني "الكل") أو يطابق شارة الكرت؟
             let categoryMatch = (selectedCategory === '' || badgeText === selectedCategory);
 
-            // 2. هل حقل البحث فاضي أو العنوان بيحتوي على الكلمة المكتوبة؟
+            // 2. هل حقل البحث فارغ أو العنوان بيحتوي على الكلمة المكتوبة؟
             let searchMatch = (searchText === '' || titleText.includes(searchText));
 
             // إذا تحقق الشرطين، بنعرض الكرت، وإلا بنخفيه
@@ -76,6 +76,26 @@ if (filterBtn) {
             } else {
                 currentItem.style.display = 'none'; // إخفاء العنصر
             }
+        }
+    });
+}
+
+
+// ==========================================
+// 3. التبديل للوضع الليلي (Dark Mode)
+// ==========================================
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+        // إضافة أو إزالة كلاس dark-mode من جسم الصفحة
+        document.body.classList.toggle('dark-mode');
+
+        // تغيير شكل أيقونة الزر
+        if (document.body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️';
+        } else {
+            themeToggle.textContent = '🌙';
         }
     });
 }
