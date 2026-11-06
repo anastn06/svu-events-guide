@@ -1,0 +1,33 @@
+/* ÊÚÑíİ ÇáÃáæÇä ÇáÃÓÇÓíÉ ááãæŞÚ */
+:root {
+    --primary-color: #0d47a1;
+    --secondary-color: #f57c00;
+    --bg-light: #f8f9fa;
+}
+
+/* ÊäÓíŞ ÇáÎØ æÇáÎáİíÉ æÊËÈíÊ ÇáÊĞííá İí ÇáÃÓİá */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--bg-light);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ÌÚá ÇáãÍÊæì ÇáÃÓÇÓí íãáÃ ÇáãÓÇÍÉ ÇáãÊÇÍÉ */
+main {
+    flex: 1;
+}
+
+/* ÊäÓíŞ ÔÚÇÑ ÇáãæŞÚ İí ÔÑíØ ÇáÊäŞá */
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+/* ÊØÈíŞ Çááæä ÇáÃÓÇÓí Úáì ÇáÃÒÑÇÑ */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
