@@ -80,3 +80,23 @@ body.dark-mode .form-select:focus {
     border-color: #0d6efd !important;
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
 }
+
+/* تنسيق مسار التنقل (Breadcrumb) في الوضع الليلي */
+body.dark-mode .breadcrumb-item a {
+    color: #64b5f6 !important; /* أزرق فاتح مريح للعين بدلاً من الأزرق الغامق */
+    text-decoration: none;
+}
+
+body.dark-mode .breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+/* لون العنصر الأخير (اسم الفعالية النشطة) */
+body.dark-mode .breadcrumb-item.active {
+    color: #e0e0e0 !important; /* لون أبيض مائل للرمادي ليكون مقروءاً بوضوح */
+}
+
+/* لون الخط الفاصل بين الروابط (السلاش /) */
+body.dark-mode .breadcrumb-item + .breadcrumb-item::before {
+    color: #888888 !important;
+}
