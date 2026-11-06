@@ -50,3 +50,11 @@ body.dark-mode .bg-light {
     background-color: #181818 !important;
     color: #ffffff !important;
 }
+
+/*تعديل الجداول للدارك مود عن طريق البوتستراب*/
+body.dark-mode .table {
+    --bs-table-bg: #1e1e1e !important;
+    --bs-table-color: #ffffff !important;
+    --bs-table-border-color: #373b3e !important;
+    color: #ffffff !important;
+}
